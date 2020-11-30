@@ -18,9 +18,10 @@ try:
     # Original simulations have ids from -1150 to 1150
     n = int(argv[1]) # Simulation id.
 except:
-    raise RuntimeError("Need the simulation id as a command line argument.")
+    print("Need the simulation id as a command line argument.")
+    exit()
 
-filename = 'solarsystem_'+("m" if n<0 otherwise else "p")+str(n)+".bin"
+filename = 'solarsystem_'+("m" if n<0 else "p")+str(abs(n))+".bin"
 
 
 # Attempt to restart the simulation
