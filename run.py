@@ -39,7 +39,7 @@ except:
         sim.add(planetnames, date='2000-01-01 12:00')
         sim.save('ss.bin') # Store to file for reuse.
 
-    # Perturb initial simulation by moving Mercury's x coordinated a tiny bit.
+    # Perturb initial simulation by moving Mercury's x coordinate a tiny bit.
     au = 149597870700000 # Number of milimeters in 1 AU.
     dx = (0.38 * n)/au
     sim.particles[1].x += dx
@@ -51,7 +51,7 @@ except:
     sim.integrator = 'whckl'
     # We set the timestep of almost exactly 8 days. The sqrt(65) ensures we have a transcendental number.
     sim.dt = np.sqrt(65)*twopi/365.25       
-    # The following setting are important. If you are new to REBOUND, read trough the
+    # The following settings are important. If you are new to REBOUND, read trough the
     # Advanced WHFast tutorial to understand what's going on. 
     sim.ri_whfast.safe_mode = 0                 # combines symplectic correctors and drift steps at beginning and end of timesteps.
     sim.ri_whfast.keep_unsynchronized = True    # allows for bit-by-bit reproducibility
