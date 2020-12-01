@@ -51,7 +51,7 @@ except:
     sim.integrator = 'whckl'
     # We set the timestep of almost exactly 8 days. The sqrt(65) ensures we have a transcendental number.
     sim.dt = np.sqrt(65)*twopi/365.25       
-    # The following settings are important. If you are new to REBOUND, read trough the
+    # The following settings are important. If you are new to REBOUND, read through the
     # Advanced WHFast tutorial to understand what's going on. 
     sim.ri_whfast.safe_mode = 0                 # combines symplectic correctors and drift steps at beginning and end of timesteps.
     sim.ri_whfast.keep_unsynchronized = True    # allows for bit-by-bit reproducibility
