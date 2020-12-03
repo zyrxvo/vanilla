@@ -21,6 +21,8 @@ except:
     print("Need the simulation id as a command line argument.")
     exit()
 
+# The simulation id given as a command line argument should be an integer, ex. -885
+# This will generate the appropriate filename, ex. solarsystem_m885.bin
 filename = 'solarsystem_'+("m" if n<0 else "p")+str(abs(n))+".bin"
 
 
@@ -70,7 +72,7 @@ gr = rebx.load_force('gr_potential')
 rebx.add_force(gr)
 gr.params['c'] = constants.C
 
-# Finally, we run the integration. 
+# Finally, we run the integration, up to 5 billion years (5e9 * twopi in REBOUND units).
 # The simulation will exit if an Escape or Encounter happens
 try:
     sim.integrate(5e9*twopi, exact_finish_time=False)
